@@ -2,6 +2,7 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import models.*;
 
 import views.html.*;
 
@@ -12,7 +13,7 @@ public class Application extends Controller {
   }
   
   public static Result category() {
-    return ok(category.render("Delete Data."));
+	return ok( views.html.category.render("หมวดหมู่", Categories.all()) );
   }
   
   public static Result product() {
@@ -36,6 +37,6 @@ public class Application extends Controller {
   }
   
   public static Result board() {
-    return ok(board.render("Webboard"));
+	return ok( views.html.board.render("กระดานข่าว", Topic.all()) );
   }
 }

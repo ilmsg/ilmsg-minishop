@@ -11,7 +11,7 @@ GET				/howtoshipping		controllers.Application.howtoshipping()
 GET				/about				controllers.Application.about()
 GET				/board				controllers.Application.board()
 
-GET				/admin				controllers.Administrator.index()
+# GET				/admin				controllers.Administrator.index()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

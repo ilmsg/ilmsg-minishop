@@ -1,28 +1,37 @@
-@(message: String)
+@(message: String, categories: List[Categories])
 
-@main("Welcome to Play 2.0") {
-
-    <div class="row-fluid marketing">
+@main("หมวดหมู่") {
+	
+    <!--
+    <div class="row-fluid">    
+    	<div class="span12">
+            @for( (category, i) <- categories.zipWithIndex){
+            	<div class="row span6">	
+                	<h4>@{category.title} - @{i} - @{categories.length}</h4>
+                	<p>@{category.description}.</p>
+                </div>         
+            }
+        </div>
+	</div>
+    -->
+    
+    <div class="row-fluid">
         <div class="span6">
-          <h4>Category1</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Category2</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Category3</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        	@for( (category, i) <- categories.zipWithIndex){
+            	@if( i % 2 == 0 ){
+                    <h4>@{category.title}</h4>
+                    <p>@{category.description}</p>
+                }
+            }
         </div>
 
         <div class="span6">
-          <h4>Category4</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Category5</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Category6</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        	@for( (category, i) <- categories.zipWithIndex){
+        		@if( i % 2 == 1 ){
+                    <h4>@{category.title}</h4>
+                    <p>@{category.description}</p>
+                }
+            }
         </div>
-      </div>
+	</div>
 }
